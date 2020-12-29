@@ -66,6 +66,11 @@ public class registerActivity extends AppCompatActivity {
             regPasswordET.requestFocus();
             return;
         }
+        if(password.length() < 6) {
+            regPasswordET.setError("Password must be minimum 6 characters long");
+            regPasswordET.requestFocus();
+            return;
+        }
         if(confPassword.isEmpty()) {
             confirmPasswordET.setError("Password confirmation is required!");
             confirmPasswordET.requestFocus();

@@ -2,4 +2,8 @@
     <string name="app_name">Bug Finder</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account_register_here">Don\'t have an account? Register here</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
