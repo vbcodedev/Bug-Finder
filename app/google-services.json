@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974973694011",
+    "project_id": "bugfinder-ebb8f",
+    "storage_bucket": "bugfinder-ebb8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974973694011:android:a9b77a880987626afe2c1e",
+        "android_client_info": {
+          "package_name": "com.example.bugfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974973694011-oj4ucja28frbp6bcv9kpfuqarib6e0g4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABKc2prP0zMixaatyBZkomcauRoBS-rmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974973694011-oj4ucja28frbp6bcv9kpfuqarib6e0g4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
