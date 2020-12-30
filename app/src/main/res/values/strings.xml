@@ -6,4 +6,9 @@
     <string name="title_home">Create Post</string>
     <string name="title_dashboard">Feed</string>
     <string name="title_notifications">Notifications</string>
+    <string name="submit">Submit</string>
+    <string name="title">Title</string>
+    <string name="description_of_bug">Description of bug</string>
+    <string name="post_bug_report">Post Bug Report</string>
+    <string name="upload_file">Upload File</string>
 </resources>
