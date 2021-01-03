@@ -36,7 +36,6 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    //private HomeViewModel homeViewModel;
     private Button submitBtn;
     private TextView bugTV;
     private Spinner gameSpinner;
@@ -62,7 +61,7 @@ public class HomeFragment extends Fragment {
         bugTitleET = root.findViewById(R.id.bugTitleET);
         bugDescriptionET = root.findViewById(R.id.bugDescET);
         uploadBugBtn = root.findViewById(R.id.uploadFileBtn);
-
+        //uploadBugBtn.setVisibility(View.INVISIBLE);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("posts");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -81,6 +80,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 saveToDatabase();
+                bugTitleET.getText().clear();
+                bugDescriptionET.getText().clear();
             }
         });
 

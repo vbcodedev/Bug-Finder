@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -28,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-
+        FirebaseUser currUser = mAuth.getCurrentUser();
+        if(currUser != null) {
+            startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+        }
         registerHereTextView = findViewById(R.id.regHereTextView);
         emailET = findViewById(R.id.editTextEmailAddress);
         passwordET = findViewById(R.id.editTextPassword);
