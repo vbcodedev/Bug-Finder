@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    private TextView resetPasswordTV;
     private TextView registerHereTextView;
     private EditText emailET;
     private EditText passwordET;
@@ -34,16 +35,26 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, DashboardActivity.class));
         }
         registerHereTextView = findViewById(R.id.regHereTextView);
+        resetPasswordTV = findViewById(R.id.forgotPwrdTV);
         emailET = findViewById(R.id.editTextEmailAddress);
         passwordET = findViewById(R.id.editTextPassword);
         loginBtn = findViewById(R.id.loginBtn);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
 
+        resetPasswordTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PasswordResetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
             }
         });
+
         registerHereTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

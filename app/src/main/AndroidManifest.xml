@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BugFinder">
+        <activity android:name=".RecyclerItemActivity"></activity>
+        <activity android:name=".PasswordResetActivity" />
         <activity
             android:name=".DashboardActivity"
-            android:label="@string/title_activity_dashboard"></activity>
+            android:label="@string/title_activity_dashboard" />
         <activity android:name=".registerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
