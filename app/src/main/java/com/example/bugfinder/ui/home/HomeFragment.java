@@ -37,6 +37,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private Button submitBtn;
+    private Button clearBtn;
     private TextView bugTV;
     private Spinner gameSpinner;
     private EditText bugTitleET;
@@ -48,6 +49,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        clearBtn = root.findViewById(R.id.clearBtn);
         submitBtn = root.findViewById(R.id.submitBugBtn);
         bugTV = root.findViewById(R.id.postBugTV);
         gameSpinner = root.findViewById(R.id.gameSpinner);
@@ -80,8 +82,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 saveToDatabase();
-                bugTitleET.getText().clear();
-                bugDescriptionET.getText().clear();
+                clearInputs();
             }
         });
 
@@ -89,6 +90,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearInputs();
             }
         });
 
@@ -103,5 +111,10 @@ public class HomeFragment extends Fragment {
         String bugDescription = bugDescriptionET.getText().toString().trim();
         BugPost newPost = new BugPost(email, gameName, bugTitle, bugDescription);
         mDatabase.child(String.valueOf(maxID + 1)).setValue(newPost);
+    }
+
+    private void clearInputs() {
+        bugTitleET.getText().clear();
+        bugDescriptionET.getText().clear();
     }
 }
