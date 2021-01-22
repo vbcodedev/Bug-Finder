@@ -21,6 +21,7 @@ import com.example.bugfinder.BugPost;
 import com.example.bugfinder.Model;
 import com.example.bugfinder.MyAdapter;
 import com.example.bugfinder.R;
+import com.example.bugfinder.Video;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,9 +55,11 @@ public class DashboardFragment extends Fragment {
                 MyAdapter newAdapter;
                 for(DataSnapshot post : snapshot.getChildren()) {
                     BugPost currPost = post.getValue(BugPost.class);
+                    Video currVideo = post.child("video").getValue(Video.class);
                     Model m = new Model();
                     m.setTitle(currPost.getBugTitle());
                     m.setDescription(currPost.getBugDescription());
+                    m.setVideoURI(currVideo.getVideoURI());
                     models.add(m);
                 }
                 newAdapter = new MyAdapter(getActivity(), models);
@@ -86,9 +89,11 @@ public class DashboardFragment extends Fragment {
                         ArrayList<Model> models = new ArrayList<Model>();
                         for(DataSnapshot post : snapshot.getChildren()) {
                             BugPost currPost = post.getValue(BugPost.class);
+                            Video currVideo = post.child("video").getValue(Video.class);
                             Model m = new Model();
                             m.setTitle(currPost.getBugTitle());
                             m.setDescription(currPost.getBugDescription());
+                            m.setVideoURI(currVideo.getVideoURI());
                             models.add(m);
                         }
                         myAdapter = new MyAdapter(getActivity(), models);

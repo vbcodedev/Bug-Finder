@@ -37,10 +37,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
             public void onItemClickListener(View view, int position) {
                 String title = models.get(position).getTitle();
                 String desc = models.get(position).getDescription();
+                String vidURI = models.get(position).getVideoURI();
 
                 Intent intent = new Intent(c, RecyclerItemActivity.class);
                 intent.putExtra("iTitle", title);
                 intent.putExtra("iDesc", desc);
+                intent.putExtra("iVideoURI", vidURI);
                 c.startActivity(intent);
             }
         });

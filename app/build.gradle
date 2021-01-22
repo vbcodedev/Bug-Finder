@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.bugfinder"
+        multiDexEnabled true
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
@@ -31,8 +32,14 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.3'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.12.3'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.12.3'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.12.3'
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
